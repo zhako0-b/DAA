@@ -1,5 +1,5 @@
 package builder.phone;
-public class phone {
+public class Phone {
     private final String model;
     private final String color;
     private final int storage;
@@ -7,7 +7,7 @@ public class phone {
     private final int batteryMah;
 
 
-    phone(String model,String color,int cameraMp,int storage,int batteryMah){
+    Phone(String model, String color, int cameraMp, int storage, int batteryMah){
         this.batteryMah=batteryMah;
         this.model=model;
         this.color=color;

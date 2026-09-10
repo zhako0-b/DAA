@@ -8,7 +8,7 @@ public class PhoneObjectBuilder implements PhoneBuilder {
 
     private String model;
     private String color = def_color;
-    private int cameraMP = def_camMP;
+    private int cameraMp = def_camMP;
     private int storage;
     private int batteryMah = def_batteryMah;
 
@@ -33,7 +33,7 @@ public class PhoneObjectBuilder implements PhoneBuilder {
 
     @Override
     public PhoneObjectBuilder setCamera(int cameraMp) {
-        this.cameraMP = cameraMp;
+        this.cameraMp = cameraMp;
         return this;
     }
 
@@ -43,5 +43,14 @@ public class PhoneObjectBuilder implements PhoneBuilder {
         return this;
     }
 
+    public Phone getResult() {
+        if (model == null || model.isBlank()) {
+            throw new IllegalStateException("Model is required");
+        }
+        if (storage <= 0) {
+            throw new IllegalStateException("Storage must be a positive number of GB");
+        }
+        return new Phone(model, color, storage, cameraMp, batteryMah);
+    }
 
 }
