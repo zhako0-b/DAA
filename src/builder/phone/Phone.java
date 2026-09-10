@@ -7,12 +7,12 @@ public class Phone {
     private final int batteryMah;
 
 
-    Phone(String model, String color, int cameraMp, int storage, int batteryMah){
-        this.batteryMah=batteryMah;
-        this.model=model;
-        this.color=color;
-        this.cameraMp=cameraMp;
-        this.storage=storage;
+    Phone(String model, String color, int storage, int cameraMp, int batteryMah) {
+        this.model = model;
+        this.color = color;
+        this.storage = storage;
+        this.cameraMp = cameraMp;
+        this.batteryMah = batteryMah;
     }
 
     public String getModel(){
@@ -28,5 +28,9 @@ public class Phone {
         return storage;
     }
 
-
+    @Override
+    public String toString() {
+        return "Phone[" + model + ", " + color + ", " + storage + "GB, "
+                + cameraMp + "MP camera, " + batteryMah + "mAh]";
+    }
 }

@@ -44,11 +44,8 @@ public class PhoneObjectBuilder implements PhoneBuilder {
     }
 
     public Phone getResult() {
-        if (model == null || model.isBlank()) {
+        if (model == null || model.trim().isEmpty()) {
             throw new IllegalStateException("Model is required");
-        }
-        if (storage <= 0) {
-            throw new IllegalStateException("Storage must be a positive number of GB");
         }
         return new Phone(model, color, storage, cameraMp, batteryMah);
     }
